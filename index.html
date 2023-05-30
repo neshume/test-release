@@ -33,8 +33,8 @@
 			let camera, scene, renderer, controls, control, control2,
 				object = new THREE.Mesh(), lightOrigin = null, progressiveSurfacemap;
 			const dirLights = [], lightmapObjects = [];
-			const params = { 'Enable': true, 'Blur Edges': true, 'Blend Window': 95,
-							 'Light Radius': 50, 'Ambient Weight': 0.5, 'Debug Lightmap': false };
+			const params = { 'Enable': true, 'Blur Edges': true, 'Blend Window': 85,
+							 'Light Radius': 50, 'Ambient Weight': 0.2, 'Debug Lightmap': false };
 			init();
 			createGUI();
 			animate();
@@ -98,7 +98,7 @@
 
 				// ground
 				const groundMesh = new THREE.Mesh(
-					new THREE.PlaneGeometry( 600, 600 ),
+					new THREE.PlaneGeometry( 800, 800 ),
 					new THREE.MeshPhongMaterial( { color: 0xffffff, depthWrite: true } )
 				);
 				groundMesh.position.y = - 0.1;
@@ -117,7 +117,7 @@
 							child.name = 'Loaded Mesh';
 							child.castShadow = true;
 							child.receiveShadow = true;
-							child.material = new THREE.MeshPhongMaterial();
+							//child.material = new THREE.MeshPhongMaterial();
 
 							// This adds the model to the lightmap
 							lightmapObjects.push( child );
@@ -131,8 +131,8 @@
 
 					} );
 					scene.add( object );
-					object.scale.set( 2, 2, 2 );
-					object.position.set( 0, - 16, 0 );
+					object.scale.set( 1, 1, 1 );
+					object.position.set( 0, 0, 0 );
 					control2 = new TransformControls( camera, renderer.domElement );
 					control2.addEventListener( 'dragging-changed', ( event ) => {
 
