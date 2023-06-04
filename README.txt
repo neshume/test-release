@@ -5,5 +5,6 @@ Setup instructions
 3. inside test-release folder , in terminal  : npx vite , this will host a local server for testing
 4. open browser and point to local http://localhost:5173/
 5. have fun :o)
+6. in index.html .. one can change main.js in main2.js for a different implementation of shadows
 
 Alex
